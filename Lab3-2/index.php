@@ -15,7 +15,7 @@ try {
     $current_price = htmlspecialchars(filter_input(INPUT_POST, "current_price", FILTER_VALIDATE_FLOAT));
     
     if ($action == "insert" && $symbol != "" && $name != "" && $current_price != 0) {
-        $query = "INSERT INTO stocks (symbol, name, current price) "
+        $query = "INSERT INTO stocks (symbol, name, current_price) "
         . "VALUES (:symbol, :name, :current_price)";
 
         $statement = $database->prepare($query);
